@@ -1,1 +1,1 @@
-# Hackathon-project-2
+# Hackathon-projThis project is part of a larger e-commerce website, featuring a responsive contact section with an interactive form for user inquiries. The contact section is divided into two main parts: the left side displays address, phone, and working hours, while the right side contains a contact form for users to submit inquiries. The layout is designed to be fully responsive, ensuring an optimal experience on all screen sizes.ect-2
