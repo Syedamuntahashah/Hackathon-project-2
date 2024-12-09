@@ -13,13 +13,13 @@ function Header() {
             <li className="font-medium text-[16px] text-black cursor-pointer hover:text-gray-500">Shop</li>
             <li className="font-medium text-[16px] text-black cursor-pointer hover:text-gray-500">About</li>
             <Link href="Contact/" className="font-medium text-[16px] text-black cursor-pointer hover:text-gray-500">Contact</Link>
-            
-          </ul>
+            </ul>
         </nav>
 
         {/* Icons Section */}
         <div className="flex items-center gap-4">
-          <Image src="/user.png" alt="User" width={24} height={24} className="cursor-pointer hover:opacity-75" />
+          
+        <Link href="/MyAccount"> <Image src="/user.png" alt="User" width={24} height={24} className="cursor-pointer hover:opacity-75" /></Link>
           <Image src="/search.png" alt="Search" width={24} height={24} className="cursor-pointer hover:opacity-75" />
           <Image src="/heart.png" alt="Wishlist" width={24} height={24} className="cursor-pointer hover:opacity-75" />
           <Image src="/shoppingcart.png" alt="Cart" width={24} height={24} className="cursor-pointer hover:opacity-75" />

@@ -6,19 +6,20 @@ export default function Home() {
     <div>
       <div className="bg-[#FBEBB5] w-full">
       {/* Header Section */}
-      <div className="flex justify-between items-center px-16 py-6 max-w-7xl mx-auto">
+      <div className="flex justify-between items-center px-16 md:px-16 py-6 max-w-7xl mx-auto">
         {/* Navigation Links */}
-        <ul className="flex gap-8">
-          <Link href="#" className="font-medium text-[16px] text-black cursor-pointer">Home</Link>
+        <nav className="hidden md:flex items-center gap-8">
+        <ul className="flex gap-6">
+          <li className="font-medium text-[16px] text-black cursor-pointer">Home</li>
           <Link href="/Shop" className="font-medium text-[16px] text-black cursor-pointer">Shop</Link>
           <li className="font-medium text-[16px] text-black cursor-pointer">About</li>
           <Link href="/Contact"className="font-medium text-[16px] text-black cursor-pointer">Contact</Link>
         </ul>
-
+        </nav>
         {/* Icons Section */}
         <div className="flex items-center gap-6">
-          <Image src="/user.png" alt="Search" width={24} height={24} className="cursor-pointer" />
-          <Image src="/search.png" alt="User" width={24} height={24} className="cursor-pointer" />
+        <Link href="/MyAccount"><Image src="/user.png" alt="Search" width={24} height={24} className="cursor-pointer"/></Link>
+          <Image src="/search.png" alt="User" width={24} height={24} className="cursor-pointer"/>
           <Image src="/heart.png" alt="Wishlist" width={24} height={24} className="cursor-pointer" />
           <Image src="/shoppingcart.png" alt="Cart" width={24} height={24} className="cursor-pointer" />
         </div>
