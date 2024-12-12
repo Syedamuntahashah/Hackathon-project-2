@@ -4,29 +4,44 @@ import Link from "next/link";
 export default function Home() {
   return (
     <div>
+    <div>
+      <div className="bg-[#FBEBB5]">
       <div className="bg-[#FBEBB5] w-full">
       {/* Header Section */}
-      <div className="flex justify-between items-center px-16 md:px-16 py-6 max-w-7xl mx-auto">
+      <div className="flex justify-between items-center px-4 md:px-16 py-4 max-w-7xl mx-auto">
         {/* Navigation Links */}
         <nav className="hidden md:flex items-center gap-8">
-        <ul className="flex gap-6">
-          <li className="font-medium text-[16px] text-black cursor-pointer">Home</li>
-          <Link href="/Shop" className="font-medium text-[16px] text-black cursor-pointer">Shop</Link>
-          <li className="font-medium text-[16px] text-black cursor-pointer">About</li>
-          <Link href="/Contact"className="font-medium text-[16px] text-black cursor-pointer">Contact</Link>
-        </ul>
+          <ul className="flex gap-6">
+            <Link href="/" className="font-medium text-[16px] text-black cursor-pointer hover:text-gray-500">Home</Link>
+            <Link href="/Shop" className="font-medium text-[16px] text-black cursor-pointer hover:text-gray-500">Shop</Link>
+            <li className="font-medium text-[16px] text-black cursor-pointer hover:text-gray-500">About</li>
+            <Link href="/Contact" className="font-medium text-[16px] text-black cursor-pointer hover:text-gray-500">Contact</Link>
+            </ul>
         </nav>
+
         {/* Icons Section */}
-        <div className="flex items-center gap-6">
-        <Link href="/MyAccount"><Image src="/user.png" alt="Search" width={24} height={24} className="cursor-pointer"/></Link>
-          <Image src="/search.png" alt="User" width={24} height={24} className="cursor-pointer"/>
-          <Image src="/heart.png" alt="Wishlist" width={24} height={24} className="cursor-pointer" />
-          <Image src="/shoppingcart.png" alt="Cart" width={24} height={24} className="cursor-pointer" />
+        <div className="flex items-center gap-4">
+          
+        <Link href="/MyAccount"> <Image src="/user.png" alt="User" width={24} height={24} className="cursor-pointer hover:opacity-75" /></Link>
+          <Image src="/search.png" alt="Search" width={24} height={24} className="cursor-pointer hover:opacity-75" />
+          <Image src="/heart.png" alt="Wishlist" width={24} height={24} className="cursor-pointer hover:opacity-75" />
+          <Link href="/Cart"><Image src="/shoppingcart.png" alt="Cart" width={24} height={24} className="cursor-pointer hover:opacity-75"/></Link>
         </div>
       </div>
 
+      {/* Mobile Navigation Links */}
+      <div className="block md:hidden bg-[#FBEBB5]">
+        <ul className="flex flex-col gap-4 items-center  py-4">
+          <li className="font-medium text-[16px] text-black cursor-pointer hover:text-gray-500">Home</li>
+          <li className="font-medium text-[16px] text-black cursor-pointer hover:text-gray-500">Shop</li>
+          <li className="font-medium text-[16px] text-black cursor-pointer hover:text-gray-500">About</li>
+          <li className="font-medium text-[16px] text-black cursor-pointer hover:text-gray-500">Contact</li>
+        </ul>
+      </div>
+      </div>
+
       {/* Main Section */}
-      <main className="flex flex-col md:flex-row items-center justify-center gap-12 px-8 py-16 max-w-7xl mx-auto">
+      <main className="flex flex-col md:flex-row items-center bg-[#FBEBB5] justify-center gap-12 px-8 py-16 max-w-7xl mx-auto">
         <div className="max-w-md text-center md:text-left">
           <h1 className="font-medium text-[40px] sm:text-[48px] md:text-[56px] lg:text-[64px] leading-tight text-black mb-6">
             Rocket Single Seater
@@ -44,6 +59,8 @@ export default function Home() {
           className="w-full max-w-[300px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[600px] h-auto"
         />
       </main>
+      </div>
+
       <main className="w-full bg-[#FAF4F4] py-16">
       <div className="max-w-7xl mx-auto px-8">
         <div className="flex flex-col md:flex-row justify-between gap-12">
