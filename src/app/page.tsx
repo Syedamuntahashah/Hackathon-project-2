@@ -32,10 +32,10 @@ export default function Home() {
       {/* Mobile Navigation Links */}
       <div className="block md:hidden bg-[#FBEBB5]">
         <ul className="flex flex-col gap-4 items-center  py-4">
-          <li className="font-medium text-[16px] text-black cursor-pointer hover:text-gray-500">Home</li>
-          <li className="font-medium text-[16px] text-black cursor-pointer hover:text-gray-500">Shop</li>
+          <Link href="/" className="font-medium text-[16px] text-black cursor-pointer hover:text-gray-500">Home</Link>
+          <Link href="/Shop" className="font-medium text-[16px] text-black cursor-pointer hover:text-gray-500">Shop</Link>
           <li className="font-medium text-[16px] text-black cursor-pointer hover:text-gray-500">About</li>
-          <li className="font-medium text-[16px] text-black cursor-pointer hover:text-gray-500">Contact</li>
+          <Link href="/Contact" className="font-medium text-[16px] text-black cursor-pointer hover:text-gray-500">Contact</Link>
         </ul>
       </div>
       </div>
