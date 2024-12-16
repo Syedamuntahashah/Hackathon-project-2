@@ -1,10 +1,12 @@
+
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Image from "next/image";
+import Link from "next/link";
 function Cart(){
-    return(
+  return(
         <div>
-            <Header />
+            <Header />     
         <div>
            <div className="w-full h-[316px] bg-[url('/background1.png')] bg-cover bg-center bg-no-repeat py-16 px-4 md:py-20 lg:py-24 relative">
                <div className="flex justify-center items-center">
@@ -67,9 +69,11 @@ function Cart(){
         <p className="text-[#B88E2F] text-[14px] md:text-[16px]">Rs. 250,000.00</p>
       </div>
       <div className="px-8">
+       <Link href="/CheckOut">
         <button className="border-[1px] rounded-[15px] border-black w-full h-[58px]">
           <p className="m-3">Check Out</p>
         </button>
+        </Link>
       </div>
     </div>
   </div>
