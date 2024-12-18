@@ -45,8 +45,8 @@ function ProductDetail(){
       </div>
 
       <p className="text-sm leading-6">
-        Setting the bar as one of the loudest speakers in its class, the <br />
-        Kilburn is a compact, stout-hearted hero with a well-balanced <br />
+        Setting the bar as one of the loudest speakers in its class the <br />
+        Kilburn is a compact stout-hearted hero with a well-balanced <br />
         audio which boasts a clear midrange and extended highs for a <br />
         sound.
       </p>
@@ -103,7 +103,7 @@ function ProductDetail(){
         <div className="flex gap-6">
           <p>Tags</p>
           <p>:</p>
-          <p>Sofa, Chair, Home, Shop</p>
+          <p>Sofa Chair Home Shop</p>
         </div>
         <div className="flex pb-20 items-center gap-6">
           <p>Share</p>
@@ -132,12 +132,12 @@ function ProductDetail(){
   <div className="px-4 md:px-12">
     <div>
       <p className="pb-6 text-base text-justify text-[#9F9F9F]">
-        Embodying the raw, wayward spirit of rock 'n' roll, the Kilburn portable active stereo speaker takes the unmistakable look and sound of Marshall, unplugs the chords, and takes the show on the road.
+        Embodying the raw wayward spirit of rock n roll the Kilburn portable active stereo speaker takes the unmistakable look and sound of Marshall unplugs the chords and takes the show on the road.
       </p>
     </div>
     <div>
       <p className="text-base text-justify text-[#9F9F9F]">
-        Weighing in under 7 pounds, the Kilburn is a lightweight piece of vintage styled engineering. Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced audio which boasts a clear midrange and extended highs for a sound that is both articulate and pronounced. The analogue knobs allow you to fine tune the controls to your personal preferences while the guitar-influenced leather strap enables easy and stylish travel.
+        Weighing in under 7 pounds the Kilburn is a lightweight piece of vintage styled engineering. Setting the bar as one of the loudest speakers in its class the Kilburn is a compact stout-hearted hero with a well-balanced audio which boasts a clear midrange and extended highs for a sound that is both articulate and pronounced. The analogue knobs allow you to fine tune the controls to your personal preferences while the guitar-influenced leather strap enables easy and stylish travel.
       </p>
     </div>
   </div>
