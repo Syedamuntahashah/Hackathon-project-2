@@ -175,7 +175,9 @@ export default function Home() {
         </div>
         <div className="flex justify-center sm:justify-start">
           <div className="flex justify-center items-center w-[255px] sm:w-[200px] h-[64px] border-[1px] rounded-sm border-black mt-4 sm:mt-8">
+           <Link href="/ProductDetail">
             <button className="text-[20px] sm:text-[24px] leading-[30px]">Order Now</button>
+           </Link>
           </div>
         </div>
       </div>
