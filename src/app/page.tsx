@@ -25,7 +25,7 @@ export default function Home() {
         <Link href="/MyAccount"> <Image src="/user.png" alt="User" width={24} height={24} className="cursor-pointer hover:opacity-75" /></Link>
           <Image src="/search.png" alt="Search" width={24} height={24} className="cursor-pointer hover:opacity-75" />
           <Image src="/heart.png" alt="Wishlist" width={24} height={24} className="cursor-pointer hover:opacity-75" />
-          <Link href="/Cart"><Image src="/shoppingcart.png" alt="Cart" width={24} height={24} className="cursor-pointer hover:opacity-75"/></Link>
+          <Image src="/shoppingcart.png" alt="Cart" width={24} height={24} className="cursor-pointer hover:opacity-75"/>
         </div>
       </div>
 

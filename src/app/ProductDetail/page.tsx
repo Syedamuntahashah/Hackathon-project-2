@@ -1,6 +1,7 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Image from "next/image";
+import Link from "next/link";
 function ProductDetail(){
     return(
         <div>
@@ -76,9 +77,11 @@ function ProductDetail(){
         </div>
 
         <div className="p-2">
+        <Link href="/Cart">
           <button className="flex items-center justify-center border border-black px-10 rounded-2xl w-auto h-[64px]">
             <p className="text-[20px] leading-[30px]">Add To Cart</p>
           </button>
+        </Link> 
         </div>
       </div>
 
