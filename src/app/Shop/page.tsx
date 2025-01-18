@@ -2,6 +2,7 @@
 import Header from "@/components/Header"
 import Footer from "@/components/Footer";
 import Image from "next/image";
+import Link from "next/link";
 
 function Shop(){
     return (
@@ -70,7 +71,9 @@ function Shop(){
      <div className="flex flex-wrap justify-center gap-8 max-w-7xl mx-auto px-4">
         {/* Product Card 1 */}
         <div className="flex flex-col items-start w-[287px]">
+          <Link href="/product/modularsofa">
           <Image src="/modularsofa.png" alt="Modular Sofa" width={287} height={287} className="w-full h-auto" />
+          </Link>
           <p className="poppins-regular-400 font-normal text-[16px] leading-6 mt-4 mb-2">
             Trenton modular sofa 3
           </p>
@@ -79,7 +82,9 @@ function Shop(){
 
         {/* Product Card 2 */}
         <div className="flex flex-col items-start w-[287px]">
+          <Link href="/product/granite">
           <Image src="/diningtable.png" alt="Dining Table" width={287} height={287} className="w-full h-auto" />
+          </Link>
           <p className="poppins-regular-400 font-normal text-[16px] leading-6 mt-4 mb-2">
             Granite dining table with dining chair
           </p>

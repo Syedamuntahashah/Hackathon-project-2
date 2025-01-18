@@ -1,6 +1,21 @@
 import Image from "next/image";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+import { client } from "@/sanity/lib/client";
+
+
+export async function page() {
+  const products = await client.fetch(`*[_type == 'product']`);
+
+
+  return {
+    props: { products },
+  };
+}
+
+
+
+
 export default function Home() {
   return (
     <div>
@@ -198,9 +213,11 @@ export default function Home() {
           <Image src="/teapad.png" alt="card" width={393} height={393} className="w-full h-auto" />
           <p className="font-normal text-[20px] leading-[30px] mt-4">Going all-in with millennial design</p>
           <div>
+           <Link href="/Blogs">
             <button className="font-medium text-[24px] leading-9 underline underline-offset-8 mt-4">
               Read More
             </button>
+           </Link> 
           </div>
           <div className="mt-4">
             <Image src="/time.png" alt="" width={223} height={24} />
