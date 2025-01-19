@@ -2,10 +2,21 @@ import Image from "next/image";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import { client } from "@/sanity/lib/client";
+import { Product} from "../../sanity-migration/importData";
 
 
 export async function page() {
-  const products = await client.fetch(`*[_type == 'product']`);
+  const products: Product[] = await client.fetch(`*[_type == 'product']{
+  id,
+  name,
+  imagePath,
+  price,
+  description,
+  discountPercentage,
+  isFeaturedProduct,
+  stockLevel,
+  category
+}`);
 
 
   return {
