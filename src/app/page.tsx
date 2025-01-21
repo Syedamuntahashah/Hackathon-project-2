@@ -6,32 +6,8 @@ import { Product } from "../../types/products";
 
 
 
-export async function getstaticprops() {
-  const products: Product[] = await client.fetch(`*[_type == "product"]{
-    _id,
-    name,
-    image {
-      asset->{
-        _id,
-        url
-      }
-    },
-    price,
-    description,
-    discountPercentage,
-    isFeaturedProduct,
-    stockLevel,
-    category
-  }
-  `);
-
-
-  return {
-    props: { products },
-  };
-}
-
-const ProductsPage = ({ }: { products: Product[] }) => {
+function ProductsPage() {
+  
   return (
     <div>
     <div>
