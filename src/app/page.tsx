@@ -2,21 +2,28 @@ import Image from "next/image";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import { client } from "@/sanity/lib/client";
-import { Product} from "../../sanity-migration/importData";
+import { Product } from "../../types/products";
 
 
-export async function page() {
-  const products: Product[] = await client.fetch(`*[_type == 'product']{
-  id,
-  name,
-  imagePath,
-  price,
-  description,
-  discountPercentage,
-  isFeaturedProduct,
-  stockLevel,
-  category
-}`);
+
+export async function getstaticprops() {
+  const products: Product[] = await client.fetch(`*[_type == "product"]{
+    _id,
+    name,
+    image {
+      asset->{
+        _id,
+        url
+      }
+    },
+    price,
+    description,
+    discountPercentage,
+    isFeaturedProduct,
+    stockLevel,
+    category
+  }
+  `);
 
 
   return {
@@ -24,10 +31,7 @@ export async function page() {
   };
 }
 
-
-
-
-export default function Home() {
+const ProductsPage = ({ }: { products: Product[] }) => {
   return (
     <div>
     <div>
@@ -300,3 +304,5 @@ export default function Home() {
     </div>
   );
 }
+
+export default ProductsPage;
