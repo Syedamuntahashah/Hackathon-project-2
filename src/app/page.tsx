@@ -1,10 +1,6 @@
 import Image from "next/image";
 import Footer from "@/components/Footer";
 import Link from "next/link";
-import { client } from "@/sanity/lib/client";
-import { Product } from "../../types/products";
-
-
 
 function ProductsPage() {
   
