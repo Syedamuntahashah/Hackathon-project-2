@@ -1,26 +1,22 @@
-"use client";
-
-import { client } from "@/sanity/lib/client"; 
+"use client"
+import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
 import { Product } from "../../../../types/products";
 import Image from "next/image";
-import { useEffect, useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import React from "react";
+import { useEffect, useState } from "react";
+import { useParams } from "next/navigation"; 
 
-interface ProductDetailProps {
-  params: { slug: string };
-}
-
-const ProductDetail = ({ params }: ProductDetailProps) => {
+const ProductDetail = () => {
+  const { slug } = useParams(); 
   const [product, setProduct] = useState<Product | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  
-  const { slug } = params;  // Grabbing the slug directly from params
 
   useEffect(() => {
+    if (!slug) return;  
+
     const fetchProduct = async () => {
       try {
         const query = `*[_type == "product" && slug.current == $slug][0]{
@@ -62,7 +58,7 @@ const ProductDetail = ({ params }: ProductDetailProps) => {
   if (loading) {
     return (
       <div className="flex justify-center items-center h-screen">
-        <p>Loading...</p>  {/* You can replace this with a spinner or animation */}
+        <p>Loading...</p>
       </div>
     );
   }
@@ -132,9 +128,3 @@ const ProductDetail = ({ params }: ProductDetailProps) => {
 };
 
 export default ProductDetail;
-
-
-
-
-
-
