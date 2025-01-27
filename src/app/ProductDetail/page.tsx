@@ -131,7 +131,7 @@ function ProductDetail(){
   <div className="px-4 md:px-12">
     <div>
       <p className="pb-6 text-base text-justify text-[#9F9F9F]">
-        Embodying the raw wayward spirit of rock n roll the Kilburn portable active stereo speaker takes the unmistakable look and sound of Marshall unplugs the chords and takes the show on the road.
+        Embodying the raw wayward spirit of rock n roll the Kilburn portable active stereo speaker takes the unmistakable look and sound of Marshall unplugs the chords and takes the show on the road
       </p>
     </div>
     <div>
