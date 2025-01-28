@@ -2,7 +2,7 @@
 import Header from "@/components/Header"
 import Footer from "@/components/Footer";
 import Image from "next/image";
-import Link from "next/link";
+import ProductListing from "../products/page";
 
 function Shop(){
     return (
@@ -23,14 +23,16 @@ function Shop(){
             </div>
         </div>
        
-        <main className="flex flex-wrap justify-between items-center w-full h-auto bg-[#FAF4F4] mt-14 p-4">
+    <main className="flex flex-wrap justify-between items-center w-full bg-[#FAF4F4] mt-14 p-4 space-y-4 md:space-y-0">
   {/* Left Section with Icons */}
-  <div className="flex items-center gap-4">
+  <div className="flex flex-wrap items-center gap-4">
     <div>
       <Image src="/unicons.png" alt="icon" width={25} height={25} />
     </div>
     <div>
-      <p className="font-normal text-[20px] leading-[30px] text-black">Filter</p>
+      <p className="font-normal text-[18px] md:text-[20px] leading-[28px] md:leading-[30px] text-black">
+        Filter
+      </p>
     </div>
     <div>
       <Image src="/grid.png" alt="icon" width={28} height={28} />
@@ -38,42 +40,44 @@ function Shop(){
     <div>
       <Image src="/vector1.png" alt="icon" width={21} height={19.5} />
     </div>
-    <div className="text-black">|</div>
+    <div className="hidden md:block text-black">|</div>
     <div>
-      <p className="font-normal text-[20px] leading-[30px] text-black">
+      <p className="font-normal text-[14px] md:text-[20px] leading-[22px] md:leading-[30px] text-black">
         Showing 1-16 of 32 results
       </p>
     </div>
   </div>
 
   {/* Right Section with Filters and Buttons */}
-  <div className="flex flex-wrap gap-4">
+  <div className="flex flex-wrap gap-4 justify-center md:justify-end w-full md:w-auto">
     {/* Show Button */}
     <div className="flex items-center">
-      <h1 className="font-normal text-[20px] leading-[30px] text-black">Show</h1>
-      <button className="bg-white w-[55px] h-[55px] text-[#9f9f9f] ml-2">
+      <h1 className="font-normal text-[14px] md:text-[20px] leading-[22px] md:leading-[30px] text-black">
+        Show
+      </h1>
+      <button className="bg-white w-[45px] h-[45px] md:w-[55px] md:h-[55px] text-[#9f9f9f] ml-2 flex items-center justify-center">
         16
       </button>
     </div>
 
     {/* Sort By Dropdown */}
     <div className="flex items-center">
-      <h1 className="font-normal text-[20px] leading-[30px] text-black">Sort by</h1>
-      <button className="bg-white w-[188px] h-[55px] text-[#9f9f9f] ml-2">
+      <h1 className="font-normal text-[14px] md:text-[20px] leading-[22px] md:leading-[30px] text-black">
+        Sort by
+      </h1>
+      <button className="bg-white w-[150px] h-[45px] md:w-[188px] md:h-[55px] text-[#9f9f9f] ml-2 flex items-center justify-center">
         Default
       </button>
     </div>
   </div>
 </main>
-
 <main>
      {/* Product Row Section */}
      <div className="flex flex-wrap justify-center gap-8 max-w-7xl mx-auto px-4">
         {/* Product Card 1 */}
+       
         <div className="flex flex-col items-start w-[287px]">
-          <Link href="/product/modularsofa">
           <Image src="/modularsofa.png" alt="Modular Sofa" width={287} height={287} className="w-full h-auto" />
-          </Link>
           <p className="poppins-regular-400 font-normal text-[16px] leading-6 mt-4 mb-2">
             Trenton modular sofa 3
           </p>
@@ -82,9 +86,7 @@ function Shop(){
 
         {/* Product Card 2 */}
         <div className="flex flex-col items-start w-[287px]">
-          <Link href="/product/granite">
           <Image src="/diningtable.png" alt="Dining Table" width={287} height={287} className="w-full h-auto" />
-          </Link>
           <p className="poppins-regular-400 font-normal text-[16px] leading-6 mt-4 mb-2">
             Granite dining table with dining chair
           </p>
@@ -184,6 +186,7 @@ function Shop(){
         </div>
       </div>
       <div className="flex flex-wrap justify-center gap-8 max-w-7xl mx-auto px-4">
+      <ProductListing/>
         {/* Product Card 1 */}
         <div className="flex flex-col items-start w-[287px]">
           <Image src="/mask5.png" alt="mask 5" width={287} height={287} className="w-full h-auto" />
@@ -221,7 +224,7 @@ function Shop(){
         </div>
       </div>
       <div className="flex justify-center items-center w-full p-4">
-  <Image 
+    <Image 
     src="/g1.png" 
     alt="Image" 
     width={392} 
