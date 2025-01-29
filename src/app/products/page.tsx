@@ -42,6 +42,7 @@ const ProductListing = () => {
 
     fetchProducts();
   }, []); 
+  
 
   if (loading) {
     return <p>Loading...</p>;
