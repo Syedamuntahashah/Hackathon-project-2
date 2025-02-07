@@ -6,6 +6,8 @@ import { useEffect, useState } from "react";
 import { getCartItems } from "../actions/actions";
 import { Product } from "../../../types/products";
 import { urlFor } from "@/sanity/lib/image";
+import { client } from "@/sanity/lib/client";
+import Swal from "sweetalert2";
 
 function CheckOut() {
   const [cartItems, setCartItems] = useState<Product[]>([]);
@@ -61,27 +63,86 @@ function CheckOut() {
 
   const validateForm = () => {
     const errors = {
-      firstName: !formValues.firstName,
-      lastName: !formValues.lastName,
-      companyName: !formValues.companyName,
-      countryRegion: !formValues.countryRegion,
-      streetAddress: !formValues.streetAddress,
-      city: !formValues.city,
-      province: !formValues.province,
-      zipCode: !formValues.zipCode,
-      phone: !formValues.phone,
-      email: !formValues.email,
-      additionalInformation: !formValues.additionalInformation,
+      firstName: !formValues.firstName.trim(),
+      lastName: !formValues.lastName.trim(),
+      companyName: false,
+      countryRegion: !formValues.countryRegion.trim(),
+      streetAddress: !formValues.streetAddress.trim(),
+      city: !formValues.city.trim(),
+      province: !formValues.province.trim(),
+      zipCode: false,
+      phone: !formValues.phone.trim(),
+      email: !formValues.email.trim(),
+      additionalInformation: false,
     };
     setFormErrors(errors);
     return Object.values(errors).every((error) => !error);
   };
 
-  const handlePlaceOrder = () => {
-    if (validateForm()) {
-      localStorage.removeItem("Discountapplied");
-    } else {
+  const handlePlaceOrder = async () => {
+    Swal.fire({
+      title: 'Processing your order....',
+      text: 'Please wait a moment :)',
+      icon: 'info',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Proceed'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        if (validateForm()) {
+          localStorage.removeItem('Discountapplied');
+          Swal.fire(
+            'Success!',
+            "Your Order has been successfully Procssed!",
+            'success'
+          );
+        } else {
+          Swal.fire(
+            'Error!',
+            "Please fill in all the fields before Proceeding!",
+            'error'
+          );
+        }
+      }
     }
+  );
+    
+    
+    if (!validateForm()) {
+      return;
+    }
+
+    const orderData = {
+      _type: 'order',
+      firstName: formValues.firstName,
+      lastName: formValues.lastName,
+      companyName: formValues.companyName,
+      countryRegion: formValues.countryRegion,
+      streetAddress: formValues.streetAddress,
+      city: formValues.city,
+      province: formValues.province,
+      zipCode: formValues.zipCode,
+      phone: formValues.phone,
+      email: formValues.email,
+      additionalInformation: formValues.additionalInformation,
+      cartItems: cartItems.map(item => ({
+        _type: 'reference',
+        _ref: item._id
+      })),
+      total: total,
+      discount: discount,
+      orderDate: new Date().toISOString()
+    };
+    try {
+      await client.create(orderData)
+      localStorage.removeItem("Discountapplied")
+      console.log('order placed successfully')
+    } catch (error) {
+      console.error("error creating order" , error)
+    }
+
+    
   };
 
   return (
