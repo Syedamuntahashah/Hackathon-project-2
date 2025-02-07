@@ -1,12 +1,12 @@
+import Cart from "../Cart/page";
 
-import CartPage from "../CartItem/page";
 
 
 
 export default function CartSidebarPage() {
   return (
     <div>
-      <CartPage/>
+      <Cart/>
     </div>
   );
 }
