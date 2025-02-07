@@ -240,7 +240,7 @@ function Shop(){
       <h1 className="font-medium text-[28px] md:text-[32px] leading-[40px] md:leading-[48px] text-black">
         Free Delivery
       </h1>
-      <p className="text-[#9F9F9F] mt-2">
+      <p className="text-[#9f9f9fc2] mt-2">
         For all orders over $50 consectetur <br /> adipiscing elit.
       </p>
     </div>
