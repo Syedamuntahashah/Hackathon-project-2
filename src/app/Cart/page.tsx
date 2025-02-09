@@ -9,10 +9,12 @@ import { useRouter } from "next/navigation";
 import { getCartItems, removeFromCart, updateCartQuantity } from "../actions/actions";
 import { urlFor } from "@/sanity/lib/image";
 import { Product } from "../../../types/products";
+import { SignedOut, SignInButton, useUser } from "@clerk/nextjs";
 
 function Cart() {
   const [cartItems, setCartItems] = useState<Product[]>([]);
   const router = useRouter();
+  const { isSignedIn } = useUser();
 
   // Load cart items on mount
   useEffect(() => {
@@ -77,8 +79,20 @@ function Cart() {
     );
   };
 
-  // Proceed to checkout with confirmation
+  
   const handleProceed = () => {
+    
+    if (!isSignedIn) {
+      Swal.fire({
+        title: "Sign In Required",
+        text: "Please sign in before proceeding to checkout.",
+        icon: "warning",
+        confirmButtonText: "Sign In",
+      });
+      return; 
+    }
+
+    
     Swal.fire({
       title: "Processing your order...",
       text: "Please wait a moment.",
@@ -107,7 +121,6 @@ function Cart() {
             <Image src="/logo.png" alt="logo" width={77} height={77} />
           </div>
           <div className="flex justify-center items-center">
-            {/* Adjusted for mobile: smaller text and tighter line-height */}
             <h1 className="font-medium text-[32px] md:text-[48px] leading-[48px] md:leading-[72px] text-black">
               Cart
             </h1>
@@ -251,8 +264,15 @@ function Cart() {
                 onClick={handleProceed}
                 className="border border-black rounded-[15px] w-full h-[58px] flex items-center justify-center hover:bg-gray-100 transition"
               >
-                <p className="text-[14px] md:text-[16px] font-medium">Check Out</p>
+                <p className="text-[14px] md:text-[16px] font-medium">
+                  Check Out
+                </p>
               </button>
+              <p className="mt-4 text-[14px] md:text-[16px] font-medium border border-black rounded-[15px] w-full h-[58px] flex items-center justify-center hover:bg-gray-100 transition">
+                <SignedOut>
+                  <SignInButton mode="modal" />
+                </SignedOut>
+              </p>
             </div>
           </div>
         </div>

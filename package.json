@@ -10,6 +10,7 @@
     "import-data": "node sanity-migration/dist/importSanityData.mjs"
   },
   "dependencies": {
+    "@clerk/nextjs": "^6.11.1",
     "@sanity/client": "^6.27.1",
     "@sanity/desk-tool": "^2.36.2",
     "@sanity/image-url": "^1.1.0",
